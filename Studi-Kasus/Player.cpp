@@ -13,6 +13,7 @@ class Player{
     string name;
     int health;
 
+    // Constructor
     Player(string name_player, int health_player) {
         name = name_player;
         health = health_player;

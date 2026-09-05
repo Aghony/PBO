@@ -8,26 +8,28 @@
 using namespace std;
 
 //Deklarasi Class
-class WeaponCharacter {
+class Weapon {
     public :
     string name;
     int damage; 
 
-    WeaponCharacter(string name_weapon, int damage_weapon) {
+    // Constructor
+    Weapon(string name_weapon, int damage_weapon) {
             name = name_weapon;
             damage = damage_weapon;
     }
 
+    // Method attack
     void attack() {
-        cout << name << " Total Damage:  " << damage << " damage! " << endl;
+        cout << name << " Total Damage: " << damage << " damage! " << endl;
     }
 };
 
 int main() {
     
-    WeaponCharacter WeaponCharacter_1("Pedang", 25);
-    WeaponCharacter WeaponCharacter_2("Panah", 50);
-    WeaponCharacter WeaponCharacter_3("Tombak", 10);
+    Weapon WeaponCharacter_1("Pedang", 25);
+    Weapon WeaponCharacter_2("Panah", 50);
+    Weapon WeaponCharacter_3("Tombak", 10);
 
     WeaponCharacter_1.attack();
     WeaponCharacter_2.attack();
