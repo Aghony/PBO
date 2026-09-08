@@ -2,14 +2,14 @@
 
 using namespace std;
 
-class invetory{
+class item{
     private:
     string name;
     int quantity;
     double price;
     
     public:
-    invetory(string name_item, int quantity_item, double price_item){
+    item(string name_item, int quantity_item, double price_item){
         name = name_item;
         quantity = quantity_item;
         price = price_item;
@@ -43,8 +43,8 @@ class invetory{
 };
 
 int main(){
-    invetory potion("Health Potion", 10, 5000);
-    invetory sword("Exalibur Sword", 10, 1500);
+    item potion("Health Potion", 10, 5000);
+    item sword("Exalibur Sword", 10, 1500);
 
     potion.displayInfo();
     sword.displayInfo();
