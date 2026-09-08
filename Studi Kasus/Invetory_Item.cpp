@@ -2,14 +2,6 @@
 
 using namespace std;
 
-// Question
-// Buatlah class item yang memiliki atribut name(string), quantity(int), dan price(double)
-// Buatlah Constructor untuk menginisialisasi atribut name, quantity, dan price
-// Buatlah Method useItem(Int amount): Mengurangi quantity sejumlah amount. Tampilkan Pesan jika stok tidak cukup, 
-// addStock(int Amount): Menambahkan quantity 
-// dan displayInfo(): menampilkan seluruh detail item dan total nilainya (quantity * price)
-// Fungsi main(), buat minimal 2 objek item berbeda dan uji semua method yang ada.
-
 class invetory{
     private:
     string name;
@@ -23,14 +15,51 @@ class invetory{
         price = price_item;
     }
 
-
+    // Method UseItem (Int amount)
     void useItem(int amount ) {
         if(amount <= quantity ) {
-            cout << "Stock "
-        }
-    }   
+            quantity -= amount;
+            cout << amount << " " << name << " digunakan" << endl;
+        }else {
+            cout << " stok" << name << " tidak dicukup!" << endl;
+        };
+    }
+
+    // Method addStock (Int amount)
+    void addStock(int amount ) {
+        quantity += amount; 
+        cout << amount << " " << name << " bertambah" << endl;
+    }
+
+    // Menampilkan informasi item 
+    void displayInfo() {
+        double totalValue = quantity * price;
+        cout << "Nama Item          : " << name << endl;
+        cout << "Quantity Item      : " << quantity << endl;
+        cout << "Price Item         : Rp " << price << endl;
+        cout << "Total Nilai        : Rp " << totalValue << endl;
+        cout << "....................................." << endl;
+    }
 };
 
 int main(){
+    invetory potion("Health Potion", 10, 5000);
+    invetory sword("Exalibur Sword", 10, 1500);
 
+    potion.displayInfo();
+    sword.displayInfo();
+
+    //menguji useItem()
+    potion.useItem(3);
+    sword.useItem(1);
+
+    //menguji addStock()
+    potion.addStock(5);
+    sword.useItem(2);
+
+    // Menampilkan informasi setelah perubahan
+    potion.displayInfo();
+    sword.displayInfo();
+
+    return 0;
 }
