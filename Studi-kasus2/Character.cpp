@@ -22,6 +22,7 @@ class NPC{
     }
 };
 
+// Derived Class Merchant
 class Merchant : public NPC {
     private: 
     int coinPurse;
@@ -39,6 +40,7 @@ class Merchant : public NPC {
     }
 };
 
+// Derived Class Blacksmith
 class Blacksmith : public Merchant {
     private: 
     int smithinglevel;
